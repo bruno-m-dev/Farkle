@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfjgx7ghvgq5k"]
+
+[ext_resource type="Script" uid="uid://b63t707rotcbw" path="res://Scripts/Game.gd" id="1_g2eya"]
+[ext_resource type="PackedScene" uid="uid://dp7kjeshmgjrp" path="res://Scenes/back_ground.tscn" id="3_lursl"]
+[ext_resource type="PackedScene" uid="uid://cu448f3pj4jla" path="res://Scenes/hud.tscn" id="4_fq0k3"]
+[ext_resource type="AudioStream" uid="uid://dfkc2u4d0htfv" path="res://Sounds/dieShuffle1.ogg" id="7_j4fyq"]
+[ext_resource type="AudioStream" uid="uid://bvxw37mseyqi5" path="res://Sounds/dieThrow1.ogg" id="8_63dvg"]
+[ext_resource type="PackedScene" uid="uid://c1kuedvdjbjuh" path="res://Scenes/dice_manager.tscn" id="8_vn00l"]
+[ext_resource type="PackedScene" uid="uid://cali0nha1wwol" path="res://Scenes/main_menu.tscn" id="35_8ktu3"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_g2eya")
+
+[node name="MainMenu" parent="." instance=ExtResource("35_8ktu3")]
+offset_left = 7.0
+offset_top = 579.0
+offset_right = 7.0
+offset_bottom = 579.0
+
+[node name="HUD" parent="." instance=ExtResource("4_fq0k3")]
+mouse_force_pass_scroll_events = false
+
+[node name="DiceManager" parent="." instance=ExtResource("8_vn00l")]
+
+[node name="BackGround" parent="." instance=ExtResource("3_lursl")]
+
+[node name="DieShuffle1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_j4fyq")
+
+[node name="DieThrow1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_63dvg")

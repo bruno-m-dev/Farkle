@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu448f3pj4jla"]
+
+[ext_resource type="Script" uid="uid://duf7w5lp5cold" path="res://Scripts/dice_roll_button.gd" id="1_gbgxx"]
+[ext_resource type="Script" uid="uid://diyfbtsmb3ijx" path="res://Scenes/to_main_menu_button.gd" id="2_mwmuy"]
+
+[node name="HUD" type="Control"]
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 962.0
+offset_bottom = 539.0
+
+[node name="DiceRollButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 108.0
+offset_right = 881.0
+offset_bottom = 168.0
+toggle_mode = true
+text = "Tirar dados"
+script = ExtResource("1_gbgxx")
+
+[node name="DiceSelectionButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 181.0
+offset_right = 877.0
+offset_bottom = 256.0
+toggle_mode = true
+text = "Seleccionar dados
+"
+
+[node name="PartialCountAndNewDiceRollButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 269.0
+offset_right = 879.0
+offset_bottom = 346.0
+toggle_mode = true
+text = "Sumar puntos y
+volver a 
+Tirar dados"
+
+[node name="FinalCountAndShiftChangeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 364.0
+offset_right = 882.0
+offset_bottom = 441.0
+toggle_mode = true
+text = "Sumar puntos
+y finalizar turno
+"
+
+[node name="ToMainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 445.0
+offset_right = 882.0
+offset_bottom = 491.0
+toggle_mode = true
+text = "Main Menu
+"
+script = ExtResource("2_mwmuy")
+
+[connection signal="pressed" from="DiceRollButton" to="DiceRollButton" method="_on_pressed"]
+[connection signal="pressed" from="DiceSelectionButton" to="DiceSelectionButton" method="_on_pressed"]
+[connection signal="pressed" from="PartialCountAndNewDiceRollButton" to="PartialCountAndNewDiceRollButton" method="_on_pressed"]
+[connection signal="pressed" from="FinalCountAndShiftChangeButton" to="FinalCountAndShiftChangeButton" method="_on_pressed"]
+[connection signal="pressed" from="ToMainMenuButton" to="ToMainMenuButton" method="_on_pressed"]

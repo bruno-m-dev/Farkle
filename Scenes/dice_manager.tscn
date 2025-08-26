@@ -1,0 +1,194 @@
+[gd_scene load_steps=31 format=3 uid="uid://c1kuedvdjbjuh"]
+
+[ext_resource type="Script" uid="uid://1p3s05k76pd8" path="res://Scripts/dice_manager.gd" id="1_2avr7"]
+[ext_resource type="Texture2D" uid="uid://b0twmpl3uu0tj" path="res://Images/Dice/dieRed1.png" id="2_1g4tt"]
+[ext_resource type="Script" uid="uid://dgdbtp010yeng" path="res://Scenes/area_2d.gd" id="3_a01wy"]
+[ext_resource type="Texture2D" uid="uid://kxwrcvn8cagg" path="res://Images/Dice/dieRed_border2.png" id="3_iv6xg"]
+[ext_resource type="Texture2D" uid="uid://bdu6b2pl87kkh" path="res://Images/Dice/dieRed3.png" id="4_2nigi"]
+[ext_resource type="Script" uid="uid://x3m0fwhc8kjh" path="res://Scenes/collision_shape_2d.gd" id="4_depru"]
+[ext_resource type="Texture2D" uid="uid://cue8am18q5a74" path="res://Images/Dice/dieRed4.png" id="5_7uaw6"]
+[ext_resource type="Texture2D" uid="uid://bcg7uuh3bplcq" path="res://Images/Dice/dieRed_border5.png" id="6_t106f"]
+[ext_resource type="Texture2D" uid="uid://dp3wqaht5gcba" path="res://Images/Dice/dieRed6.png" id="7_8imve"]
+[ext_resource type="Texture2D" uid="uid://gg8y38q1wp76" path="res://Images/Animations/a01.png" id="8_u51ea"]
+[ext_resource type="Texture2D" uid="uid://71nnm14eo133" path="res://Images/Animations/a02.png" id="9_mbb5o"]
+[ext_resource type="Texture2D" uid="uid://c3r7yb1o7y257" path="res://Images/Animations/a03.png" id="10_gy8us"]
+[ext_resource type="Texture2D" uid="uid://cyh1vh6who6s0" path="res://Images/Animations/a04.png" id="11_7v8n1"]
+[ext_resource type="Texture2D" uid="uid://dmgoqssgfjw2v" path="res://Images/Animations/a06.png" id="12_0iit3"]
+[ext_resource type="Texture2D" uid="uid://b23cpceem684y" path="res://Images/Animations/a08.png" id="13_fkaf6"]
+[ext_resource type="Texture2D" uid="uid://nrkiw8t1lsrw" path="res://Images/Animations/a09.png" id="14_7slax"]
+[ext_resource type="Texture2D" uid="uid://c24efng4wq0nk" path="res://Images/Animations/recoger_dados/recoger-dados01.png" id="15_1m5i2"]
+[ext_resource type="Texture2D" uid="uid://ef6orp30nkbb" path="res://Images/Animations/recoger_dados/recoger-dados02.png" id="16_8r8jg"]
+[ext_resource type="Texture2D" uid="uid://71d7iu6c078s" path="res://Images/Animations/recoger_dados/recoger-dados03.png" id="17_qj0kx"]
+[ext_resource type="Texture2D" uid="uid://dgim4kfficcvc" path="res://Images/Animations/recoger_dados/recoger-dados04.png" id="18_5nop2"]
+[ext_resource type="Texture2D" uid="uid://b4thkkuou3s7d" path="res://Images/Animations/recoger_dados/recoger-dados05.png" id="19_r838k"]
+[ext_resource type="Texture2D" uid="uid://d2l4468h74rat" path="res://Images/Animations/recoger_dados/recoger-dados06.png" id="20_mtp7x"]
+
+[sub_resource type="GDScript" id="GDScript_do1ch"]
+script/source = "extends Node
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hc4g"]
+size = Vector2(82.4339, 83.2446)
+
+[sub_resource type="Animation" id="Animation_g8fwu"]
+resource_name = "AgitarCubilete"
+length = 0.300003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_u51ea"), ExtResource("9_mbb5o"), ExtResource("10_gy8us"), ExtResource("11_7v8n1"), ExtResource("12_0iit3"), ExtResource("13_fkaf6"), ExtResource("14_7slax"), ExtResource("14_7slax")]
+}
+
+[sub_resource type="Animation" id="Animation_2x1oe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_u51ea")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iar8x"]
+_data = {
+&"AgitarCubilete": SubResource("Animation_g8fwu"),
+&"RESET": SubResource("Animation_2x1oe")
+}
+
+[sub_resource type="Animation" id="Animation_xsw82"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_1m5i2")]
+}
+
+[sub_resource type="Animation" id="Animation_60iw4"]
+resource_name = "recoger_dados"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.633333, 0.833333, 1.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_1m5i2"), ExtResource("16_8r8jg"), ExtResource("17_qj0kx"), ExtResource("18_5nop2"), ExtResource("19_r838k"), ExtResource("20_mtp7x")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3px3"]
+_data = {
+&"RESET": SubResource("Animation_xsw82"),
+&"recoger_dados": SubResource("Animation_60iw4")
+}
+
+[node name="DiceManager" type="Node2D"]
+script = ExtResource("1_2avr7")
+
+[node name="DiceSelectionScript" type="Node" parent="."]
+script = SubResource("GDScript_do1ch")
+
+[node name="Dice1" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(93, 63)
+rotation = 1.19775
+texture = ExtResource("2_1g4tt")
+
+[node name="Area2D" type="Area2D" parent="Dice1"]
+position = Vector2(20.8135, -20.2272)
+script = ExtResource("3_a01wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dice1/Area2D"]
+z_index = 1
+position = Vector2(-21.503, 19.9847)
+shape = SubResource("RectangleShape2D_8hc4g")
+script = ExtResource("4_depru")
+
+[node name="Dice2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(176, 137)
+rotation = -0.292297
+texture = ExtResource("3_iv6xg")
+
+[node name="Dice3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(237, 61)
+rotation = -0.25578
+texture = ExtResource("4_2nigi")
+
+[node name="Dice4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(296, 151)
+rotation = 0.362893
+texture = ExtResource("5_7uaw6")
+
+[node name="Dice5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(339, 67)
+rotation = -0.370103
+texture = ExtResource("6_t106f")
+
+[node name="Dice6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(399, 148)
+rotation = 0.599391
+texture = ExtResource("7_8imve")
+
+[node name="ShakeDiceCupAnimation" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ShakeDiceCupAnimation"]
+position = Vector2(330, 310)
+rotation = -4.71239
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("8_u51ea")
+
+[node name="ShakeDiceCup" type="AnimationPlayer" parent="ShakeDiceCupAnimation/Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_iar8x")
+}
+autoplay = "AgitarCubilete"
+
+[node name="PickUpDiceAnimation" type="Node2D" parent="."]
+visible = false
+position = Vector2(330, 310)
+rotation = 1.5708
+scale = Vector2(0.335, 0.335)
+
+[node name="Sprite2D" type="Sprite2D" parent="PickUpDiceAnimation"]
+position = Vector2(-304.479, -286.566)
+scale = Vector2(1.20337, 1.18554)
+texture = ExtResource("15_1m5i2")
+
+[node name="PickUpDice" type="AnimationPlayer" parent="PickUpDiceAnimation/Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_j3px3")
+}
+autoplay = "recoger_dados"
+
+[connection signal="mouse_entered" from="Dice1/Area2D" to="Dice1/Area2D" method="_on_mouse_entered"]
