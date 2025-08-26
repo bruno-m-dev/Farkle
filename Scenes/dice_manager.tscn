@@ -1,11 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://c1kuedvdjbjuh"]
+[gd_scene load_steps=30 format=3 uid="uid://c1kuedvdjbjuh"]
 
-[ext_resource type="Script" uid="uid://1p3s05k76pd8" path="res://Scripts/dice_manager.gd" id="1_2avr7"]
+[ext_resource type="Script" path="res://Scripts/dice_manager.gd" id="1_2avr7"]
 [ext_resource type="Texture2D" uid="uid://b0twmpl3uu0tj" path="res://Images/Dice/dieRed1.png" id="2_1g4tt"]
-[ext_resource type="Script" uid="uid://dgdbtp010yeng" path="res://Scenes/area_2d.gd" id="3_a01wy"]
+[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="3_a01wy"]
 [ext_resource type="Texture2D" uid="uid://kxwrcvn8cagg" path="res://Images/Dice/dieRed_border2.png" id="3_iv6xg"]
 [ext_resource type="Texture2D" uid="uid://bdu6b2pl87kkh" path="res://Images/Dice/dieRed3.png" id="4_2nigi"]
-[ext_resource type="Script" uid="uid://x3m0fwhc8kjh" path="res://Scenes/collision_shape_2d.gd" id="4_depru"]
 [ext_resource type="Texture2D" uid="uid://cue8am18q5a74" path="res://Images/Dice/dieRed4.png" id="5_7uaw6"]
 [ext_resource type="Texture2D" uid="uid://bcg7uuh3bplcq" path="res://Images/Dice/dieRed_border5.png" id="6_t106f"]
 [ext_resource type="Texture2D" uid="uid://dp3wqaht5gcba" path="res://Images/Dice/dieRed6.png" id="7_8imve"]
@@ -64,8 +63,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iar8x"]
 _data = {
-&"AgitarCubilete": SubResource("Animation_g8fwu"),
-&"RESET": SubResource("Animation_2x1oe")
+"AgitarCubilete": SubResource("Animation_g8fwu"),
+"RESET": SubResource("Animation_2x1oe")
 }
 
 [sub_resource type="Animation" id="Animation_xsw82"]
@@ -102,8 +101,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j3px3"]
 _data = {
-&"RESET": SubResource("Animation_xsw82"),
-&"recoger_dados": SubResource("Animation_60iw4")
+"RESET": SubResource("Animation_xsw82"),
+"recoger_dados": SubResource("Animation_60iw4")
 }
 
 [node name="DiceManager" type="Node2D"]
@@ -113,9 +112,8 @@ script = ExtResource("1_2avr7")
 script = SubResource("GDScript_do1ch")
 
 [node name="Dice1" type="Sprite2D" parent="."]
-visible = false
 z_index = 1
-position = Vector2(93, 63)
+position = Vector2(130, 145)
 rotation = 1.19775
 texture = ExtResource("2_1g4tt")
 
@@ -125,37 +123,31 @@ script = ExtResource("3_a01wy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dice1/Area2D"]
 z_index = 1
-position = Vector2(-21.503, 19.9847)
+position = Vector2(-18.7889, 17.798)
 shape = SubResource("RectangleShape2D_8hc4g")
-script = ExtResource("4_depru")
 
 [node name="Dice2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(176, 137)
+position = Vector2(219, 213)
 rotation = -0.292297
 texture = ExtResource("3_iv6xg")
 
 [node name="Dice3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(237, 61)
+position = Vector2(278.355, 125.055)
 rotation = -0.25578
 texture = ExtResource("4_2nigi")
 
 [node name="Dice4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(296, 151)
+position = Vector2(337.355, 215.055)
 rotation = 0.362893
 texture = ExtResource("5_7uaw6")
 
 [node name="Dice5" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(339, 67)
+position = Vector2(380.355, 131.055)
 rotation = -0.370103
 texture = ExtResource("6_t106f")
 
 [node name="Dice6" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(399, 148)
+position = Vector2(440.355, 212.055)
 rotation = 0.599391
 texture = ExtResource("7_8imve")
 
@@ -170,7 +162,7 @@ texture = ExtResource("8_u51ea")
 
 [node name="ShakeDiceCup" type="AnimationPlayer" parent="ShakeDiceCupAnimation/Sprite2D"]
 libraries = {
-&"": SubResource("AnimationLibrary_iar8x")
+"": SubResource("AnimationLibrary_iar8x")
 }
 autoplay = "AgitarCubilete"
 
@@ -187,7 +179,7 @@ texture = ExtResource("15_1m5i2")
 
 [node name="PickUpDice" type="AnimationPlayer" parent="PickUpDiceAnimation/Sprite2D"]
 libraries = {
-&"": SubResource("AnimationLibrary_j3px3")
+"": SubResource("AnimationLibrary_j3px3")
 }
 autoplay = "recoger_dados"
 

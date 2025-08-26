@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu448f3pj4jla"]
 
-[ext_resource type="Script" uid="uid://duf7w5lp5cold" path="res://Scripts/dice_roll_button.gd" id="1_gbgxx"]
-[ext_resource type="Script" uid="uid://diyfbtsmb3ijx" path="res://Scenes/to_main_menu_button.gd" id="2_mwmuy"]
+[ext_resource type="Script" path="res://Scripts/dice_roll_button.gd" id="1_gbgxx"]
+[ext_resource type="Script" path="res://Scripts/to_main_menu_button.gd" id="2_mwmuy"]
 
 [node name="HUD" type="Control"]
 z_as_relative = false

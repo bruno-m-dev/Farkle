@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cali0nha1wwol"]
 
 [ext_resource type="Texture2D" uid="uid://btbcbqww47xtx" path="res://Images/BackGrounds/fondo_tablero_960x540.png" id="1_med0o"]
-[ext_resource type="Script" uid="uid://cx8i4kfabfkta" path="res://Scripts/main_menu.gd" id="1_pnlk4"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_pnlk4"]
 [ext_resource type="FontFile" uid="uid://bk7fssoxqeu4y" path="res://Fonts/bevelicious.otf/bevelicious.otf" id="2_15jcw"]
 [ext_resource type="Texture2D" uid="uid://coy6fpgu4nkxb" path="res://Images/BackGrounds/top-view-of-empty-wood.png" id="2_jg43d"]
 [ext_resource type="Texture2D" uid="uid://sexsp6l7waeo" path="res://Images/BackGrounds/top-view-of-empty-wood120x77.png" id="4_c4xyy"]
@@ -70,9 +70,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v4157"]
 _data = {
-&"RESET": SubResource("Animation_srgpo"),
-&"menu_animation": SubResource("Animation_igweh"),
-&"new_animation2": SubResource("Animation_3qwyo")
+"RESET": SubResource("Animation_srgpo"),
+"menu_animation": SubResource("Animation_igweh"),
+"new_animation2": SubResource("Animation_3qwyo")
 }
 
 [node name="MainMenu" type="Control"]
@@ -194,7 +194,7 @@ text = "CREDITS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_v4157")
+"": SubResource("AnimationLibrary_v4157")
 }
 autoplay = "new_animation2"
 
