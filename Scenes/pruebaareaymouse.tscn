@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bunts06pl5uvo"]
 
-[ext_resource type="Script" path="res://Scenes/pruebaareaymouse.gd" id="1_5ujk3"]
+[ext_resource type="Script" uid="uid://cckmufhk4vu5v" path="res://Scenes/pruebaareaymouse.gd" id="1_5ujk3"]
 [ext_resource type="Texture2D" uid="uid://cf2548ykpasqk" path="res://Images/Dice/dieWhite1.png" id="1_6nqm6"]
-[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="3_bjp6m"]
+[ext_resource type="Script" uid="uid://dgdbtp010yeng" path="res://Scripts/area_2d.gd" id="3_bjp6m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfbnw"]
 radius = 36.83
