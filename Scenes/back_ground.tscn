@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp7kjeshmgjrp"]
+[gd_scene load_steps=4 format=3 uid="uid://dp7kjeshmgjrp"]
 
 [ext_resource type="Texture2D" uid="uid://btbcbqww47xtx" path="res://Images/BackGrounds/fondo_tablero_960x540.png" id="1_a0ddp"]
+[ext_resource type="Script" uid="uid://8xm2u3yha4kr" path="res://Scenes/back_ground.gd" id="1_xb1mu"]
 [ext_resource type="Texture2D" uid="uid://coy6fpgu4nkxb" path="res://Images/BackGrounds/top-view-of-empty-wood.png" id="2_hser2"]
 
 [node name="BackGround" type="Node2D"]
 self_modulate = Color(1, 1, 1, 0.984314)
+script = ExtResource("1_xb1mu")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(480, 271)

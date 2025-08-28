@@ -3,7 +3,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print ("DEBUG: Se carga escena HUD")
 
 
 
@@ -18,8 +18,9 @@ func _on_pressed() -> void:
 		$"../../DiceManager".dice_roll()
 		deactivate_button($"../DiceRollButton")
 		
-		if $"../DiceSelectionButton".disabled == true:
-			activate_button($"../DiceSelectionButton")
+		#Habilita boton de seleccionar dados si está deshabilitado
+		#if $"../DiceSelectionButton".disabled == true:
+			#activate_button($"../DiceSelectionButton")
 		
 	#EL CODIGO DEL ELSE SE EJECUTA CUANDO SE ABRE EL JUEGO. 
 	#AL HABER DADOS VISIBLES EN EL TABLERO, SE EJECUTAN LAS ANIMACIONES DE RECOGER DADOS + AGITAR EL CUBILETE.	
@@ -33,7 +34,7 @@ func _on_pressed() -> void:
 		$"../../DiceManager".recoger_dados()
 		$"../../DiceManager".dice_roll()
 		
-		deactivate_button($"../DiceRollButton")
+		activate_button($".")
 		
 	
 	

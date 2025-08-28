@@ -4,22 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://b3nrapvu0peh2" path="res://Images/Dice/greenBG.png" id="2_8ajpw"]
 [ext_resource type="Texture2D" uid="uid://c18xag2vipr65" path="res://Images/Dice/dieRed_border1.png" id="3_52i40"]
 [ext_resource type="Texture2D" uid="uid://kxwrcvn8cagg" path="res://Images/Dice/dieRed_border2.png" id="3_iv6xg"]
-[ext_resource type="Script" uid="uid://ctbty302wxoo2" path="res://Scenes/area_2d_dice_1.gd" id="4_52i40"]
-[ext_resource type="Script" uid="uid://ddemqjbrbo3jj" path="res://Scenes/area_2d_dice_2.gd" id="6_51dbu"]
+[ext_resource type="Script" uid="uid://ctbty302wxoo2" path="res://Scripts/area_2d_dice_1.gd" id="4_52i40"]
+[ext_resource type="Script" uid="uid://ddemqjbrbo3jj" path="res://Scripts/area_2d_dice_2.gd" id="6_51dbu"]
 [ext_resource type="Texture2D" uid="uid://bcg7uuh3bplcq" path="res://Images/Dice/dieRed_border5.png" id="6_t106f"]
 [ext_resource type="Texture2D" uid="uid://crx6n0g70h404" path="res://Images/Dice/dieRed_border3.png" id="7_kctvb"]
-[ext_resource type="Script" uid="uid://cojt4xxqxly21" path="res://Scenes/area_2d_dice_3.gd" id="8_52i40"]
+[ext_resource type="Script" uid="uid://cojt4xxqxly21" path="res://Scripts/area_2d_dice_3.gd" id="8_52i40"]
 [ext_resource type="Texture2D" uid="uid://gg8y38q1wp76" path="res://Images/Animations/a01.png" id="8_u51ea"]
 [ext_resource type="Texture2D" uid="uid://b1snj6l87l08q" path="res://Images/Dice/dieRed_border4.png" id="9_0lvw8"]
 [ext_resource type="Texture2D" uid="uid://71nnm14eo133" path="res://Images/Animations/a02.png" id="9_mbb5o"]
 [ext_resource type="Texture2D" uid="uid://c3r7yb1o7y257" path="res://Images/Animations/a03.png" id="10_gy8us"]
-[ext_resource type="Script" uid="uid://jc5uyq1ootuo" path="res://Scenes/area_2d_dice_4.gd" id="10_kctvb"]
+[ext_resource type="Script" uid="uid://jc5uyq1ootuo" path="res://Scripts/area_2d_dice_4.gd" id="10_kctvb"]
 [ext_resource type="Texture2D" uid="uid://bxee6g54xuk34" path="res://Images/Dice/dieRed_border6.png" id="11_3n6wd"]
 [ext_resource type="Texture2D" uid="uid://cyh1vh6who6s0" path="res://Images/Animations/a04.png" id="11_7v8n1"]
 [ext_resource type="Texture2D" uid="uid://dmgoqssgfjw2v" path="res://Images/Animations/a06.png" id="12_0iit3"]
-[ext_resource type="Script" uid="uid://cl1y0nd0vhdmo" path="res://Scenes/area_2d_dice_5.gd" id="12_0lvw8"]
+[ext_resource type="Script" uid="uid://cl1y0nd0vhdmo" path="res://Scripts/area_2d_dice_5.gd" id="12_0lvw8"]
 [ext_resource type="Texture2D" uid="uid://b23cpceem684y" path="res://Images/Animations/a08.png" id="13_fkaf6"]
-[ext_resource type="Script" uid="uid://ci5g6wab363dk" path="res://Scenes/area_2d_dice_6.gd" id="14_3n6wd"]
+[ext_resource type="Script" uid="uid://ci5g6wab363dk" path="res://Scripts/area_2d_dice_6.gd" id="14_3n6wd"]
 [ext_resource type="Texture2D" uid="uid://nrkiw8t1lsrw" path="res://Images/Animations/a09.png" id="14_7slax"]
 [ext_resource type="Texture2D" uid="uid://c24efng4wq0nk" path="res://Images/Animations/recoger_dados/recoger-dados01.png" id="15_1m5i2"]
 [ext_resource type="Texture2D" uid="uid://ef6orp30nkbb" path="res://Images/Animations/recoger_dados/recoger-dados02.png" id="16_8r8jg"]
@@ -169,6 +169,7 @@ texture = ExtResource("2_8ajpw")
 script = SubResource("GDScript_do1ch")
 
 [node name="Dice1" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(130, 145)
 rotation = 1.19775
@@ -185,6 +186,7 @@ position = Vector2(-21.0232, 20.1528)
 shape = SubResource("RectangleShape2D_8hc4g")
 
 [node name="Dice2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(219, 213)
 rotation = -0.292297
 texture = ExtResource("3_iv6xg")
@@ -198,6 +200,7 @@ rotation = 0.00435746
 shape = SubResource("RectangleShape2D_52i40")
 
 [node name="Dice3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(269, 110)
 rotation = -0.25578
 texture = ExtResource("7_kctvb")
@@ -210,6 +213,7 @@ position = Vector2(-0.410233, -0.238892)
 shape = SubResource("RectangleShape2D_kctvb")
 
 [node name="Dice4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(342, 218)
 rotation = 0.362893
 texture = ExtResource("9_0lvw8")
@@ -222,6 +226,7 @@ position = Vector2(-0.302124, -0.999954)
 shape = SubResource("RectangleShape2D_0lvw8")
 
 [node name="Dice5" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(397, 115)
 rotation = -0.370103
 texture = ExtResource("6_t106f")
@@ -231,10 +236,10 @@ script = ExtResource("12_0lvw8")
 
 [node name="CollisionShape2DDice5" type="CollisionShape2D" parent="Dice5/Area2DDice5"]
 position = Vector2(-4.23193e-06, -1.4782e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3n6wd")
 
 [node name="Dice6" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(464, 219)
 rotation = 0.599391
 texture = ExtResource("11_3n6wd")

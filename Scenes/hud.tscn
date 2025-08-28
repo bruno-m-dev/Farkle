@@ -19,7 +19,8 @@ offset_top = 108.0
 offset_right = 881.0
 offset_bottom = 168.0
 toggle_mode = true
-text = "Tirar dados"
+button_pressed = true
+text = "DICE ROLL"
 script = ExtResource("1_gbgxx")
 
 [node name="DiceSelectionButton" type="Button" parent="."]
@@ -29,7 +30,8 @@ offset_top = 181.0
 offset_right = 877.0
 offset_bottom = 256.0
 toggle_mode = true
-text = "Seleccionar dados
+button_pressed = true
+text = "SELECT DICE
 "
 
 [node name="PartialCountAndNewDiceRollButton" type="Button" parent="."]
@@ -61,7 +63,8 @@ offset_top = 445.0
 offset_right = 882.0
 offset_bottom = 491.0
 toggle_mode = true
-text = "Main Menu
+button_pressed = true
+text = "MAIN MENU
 "
 script = ExtResource("2_mwmuy")
 

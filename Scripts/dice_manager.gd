@@ -10,7 +10,7 @@ var diceRoll: Array[int] = [0,0,0,0,0,0]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
-
+	print ("DEBUG: Se carga escena DiceManager")
 
 func dice_roll():
 	
@@ -49,11 +49,15 @@ func get_dice_status():
 	
 func _on_tirar_dados_pressed() -> void:
 	recoger_dados()
+	
 	await get_tree().create_timer(1.3).timeout
+	
 	invisibilizar_dados()
 	
 	animacion_cubilete()
+	
 	recoger_dados()
+	
 	$DiceManager.dice_roll()
 
 func animacion_cubilete():
